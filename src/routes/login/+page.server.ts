@@ -9,7 +9,7 @@ export const load = (async ({cookies}) => {
     const userId = cookies.get("id");
 
     if (userId) {
-        throw redirect(307, "/Marknad");
+        throw redirect(307, "/");
     }
 
     return {};
@@ -26,7 +26,7 @@ export const actions: Actions = {
         const userId = cookies.get("id");
 
         if (userId) {
-            throw redirect(307, "/Marknad");
+            throw redirect(307, "/");
         }
 
         if (!username || !password) {
@@ -46,8 +46,8 @@ export const actions: Actions = {
 
         if (user) {
             if (user.password === password) {
-                cookies.set("id", user.id, { secure: false, path: "/Marknad" });
-                throw redirect(307, "/Marknad");
+                cookies.set("id", user.id, { secure: false, path: "/" });
+                throw redirect(307, "/");
             } else {
                 return fail(400, { login_fail: "Felaktigt lösenord" });
             }

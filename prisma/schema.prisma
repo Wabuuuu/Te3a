@@ -16,6 +16,7 @@ name String
 price String
 description String
 messages Message[]
+images image[]
 }
 model Message {
 id String @id @default(uuid())
@@ -29,6 +30,22 @@ id String @id @default(uuid())
 username String @unique
 password String
 
+}
+
+model image {
+id String @id @default(uuid())
+encoding String
+product Product? @relation(fields: [productId], references: [id])
+productId String?
+}
+
+model games {
+id String @id @default(uuid())
+character String
+opponentCharacter String
+Map String
+result String
+play_as String
 }
 
 

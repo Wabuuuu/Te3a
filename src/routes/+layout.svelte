@@ -1,36 +1,36 @@
 <script>
-    
-let links = ["/unmatched"]
-
+  // JavaScript logic (if any) goes here
 </script>
 
-
-
 <nav>
-   {#each links as link}
-    <a class = "headr" href={link}>{link}</a>
-    {/each} 
+  <!-- Navigation links (if needed) -->
 </nav>
 
-<h1
-style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
->My projects</h1>
+<h1>My projects</h1> <!-- No need to add inline style here, we are applying font globally in the <style> -->
 
-<slot> 
-
-</slot>
-
+<main>
+  <slot></slot> <!-- This is where your page content will be injected -->
+</main>
 
 <style>
+  /* Import the font */
+  @font-face {
+    font-family: 'MyCustomFont';
+    src: url('/optimusprinceps-webfont.woff') format('woff'); /* Correct path since it's directly in static */
+    font-weight: normal;
+    font-style: normal;
+  }
 
-nav{
-    width: 100%;
-    height: 30px;
-    margin-left: -8px;
-    /*background-image: linear-gradient(to right, rgb(67,28,48)0%,rgb(45,37,90)45%,rgb(45,37,90)45%,rgb(67,28,48)100%);*/
-    background-color:aquamarine
-}
+  /* Apply the font globally */
+  
 
+  /* Apply the font specifically to <h1> */
+  h1 {
+    font-family: 'MyCustomFont', serif;
+  }
 
+  /* Optional: Apply to other text elements */
+  
 
+  /* Add more styles for layout if needed */
 </style>
